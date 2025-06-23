@@ -227,13 +227,13 @@ print(model)
 
 # Infers on benign image
 img_array  = preprocess(keras.utils.img_to_array(img))
-# img_preds  = model(img_array)
-# print(img_preds)
-# benign_pred_index = np.argmax(np.array(img_preds))
-# benign_pred_label = classes[benign_pred_index]
-# print(f" Predicted label on benign image is {benign_pred_label} @ index {benign_pred_index}")
-# if benign_pred_index != 55:
-#    raise ValueError("Benign image is not properly setup for the CTF.")
+img_preds  = model(img_array)
+print(img_preds)
+benign_pred_index = np.argmax(np.array(img_preds))
+benign_pred_label = classes[benign_pred_index]
+print(f" Predicted label on benign image is {benign_pred_label} @ index {benign_pred_index}")
+if benign_pred_index != 55:
+   raise ValueError("Benign image is not properly setup for the CTF.")
 
 
 
