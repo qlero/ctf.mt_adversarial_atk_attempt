@@ -4,12 +4,11 @@ import tifffile
 from io import BytesIO
 import os
 import filetype
+import tensorflow as tf
 
 from werkzeug.utils import secure_filename
 
 from lib import HotdogClassifier
-
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = os.urandom(64)
@@ -18,7 +17,7 @@ app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024
 FLAG = "maltactf{<REDACTED>}"
 
 clf = HotdogClassifier()
-UPLOAD_PATH = "hotdog_check@end.tiff"
+UPLOAD_PATH = "upload.tiff"
 
 @app.route("/")
 def index():
@@ -36,7 +35,7 @@ def api_chat():
     
     if not file or not (secure_filename(file.filename.lower()).endswith(".tiff") or secure_filename(file.filename.lower()).endswith(".tif")):
         return jsonify({"error": "Only TIFF images are accepted. (1)"}), 400
-    print("check")
+    
     try:
         file.save(UPLOAD_PATH)
         f_type = filetype.guess(UPLOAD_PATH)
@@ -53,8 +52,8 @@ def api_chat():
     diff_mean = result["diff_mean"]
     diff_max = result["diff_max"]
 
-    print(result)
-    
+    print(label, l2_perturb, conf, diff_mean, diff_max, "2.6|0.99|0.005|0.1")
+
     # i will make sure that it actually is the flag image !
     if label.lower() == "flag":
         # if anyhow someone succeeded at beating my model, they need to beat it with an image of a hotdog HEHEHE
@@ -73,4 +72,5 @@ def api_chat():
     })
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=1337, debug=False)
+    with tf.device('/cpu:0'):
+        app.run(host='0.0.0.0', port=1337, debug=False)

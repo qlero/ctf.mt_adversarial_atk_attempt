@@ -1,0 +1,66 @@
+absl-py @ file:///croot/absl-py_1714140470852/work
+astunparse==1.6.3
+blinker==1.9.0
+brotlicffi @ file:///croot/brotlicffi_1736182461069/work
+certifi @ file:///croot/certifi_1750863846190/work/certifi
+cffi @ file:///croot/cffi_1736182485317/work
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+click==8.2.1
+contourpy==1.3.2
+cycler==0.12.1
+eagerpy==0.30.0
+filetype==1.2.0
+Flask==3.1.1
+flatbuffers @ file:///croot/python-flatbuffers_1722369094438/work
+fonttools==4.58.4
+foolbox==3.3.4
+gast @ file:///tmp/build/80754af9/gast_1637837472536/work
+gitdb==4.0.12
+GitPython==3.1.44
+google-pasta @ file:///Users/ktietz/demo/mc3/conda-bld/google-pasta_1630577991354/work
+grpcio @ file:///croot/grpc-split_1716834572340/work
+h5py @ file:///croot/h5py_1750862990877/work
+idna @ file:///croot/idna_1714398848350/work
+itsdangerous==2.2.0
+Jinja2==3.1.6
+keras @ file:///croot/keras_1733152594514/work
+kiwisolver==1.4.8
+Markdown @ file:///croot/markdown_1746114451035/work
+markdown-it-py @ file:///work/perseverance-python-buildout/croot/markdown-it-py_1698846045803/work
+MarkupSafe @ file:///croot/markupsafe_1738584038848/work
+matplotlib==3.10.3
+mdurl @ file:///work/perseverance-python-buildout/croot/mdurl_1698845653285/work
+mkl-service==2.4.0
+mkl_fft @ file:///io/mkl313/mkl_fft_1730824109137/work
+mkl_random @ file:///io/mkl313/mkl_random_1730823916628/work
+ml_dtypes @ file:///croot/ml_dtypes_1746048332589/work
+mpi4py @ file:///croot/mpi4py_1749458488241/work
+namex @ file:///croot/namex_1715206936162/work
+numpy @ file:///croot/numpy_and_numpy_base_1708638617955/work/dist/numpy-1.26.4-cp312-cp312-linux_x86_64.whl#sha256=1d700f51d8b4fa684d858c9e3b56b1656bc5c82b6b79ff08d4e3b491c430059f
+opt-einsum @ file:///tmp/build/80754af9/opt_einsum_1621500238896/work
+optree @ file:///croot/optree_1742210181724/work
+packaging @ file:///croot/packaging_1734472117206/work
+pillow==11.2.1
+protobuf==4.25.3
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+Pygments @ file:///croot/pygments_1744664109463/work
+pyparsing==3.2.3
+PySocks @ file:///work/perseverance-python-buildout/croot/pysocks_1698845478203/work
+python-dateutil==2.9.0.post0
+requests @ file:///croot/requests_1750426329888/work
+rich @ file:///croot/rich_1732638981168/work
+scipy==1.16.0
+setuptools==78.1.1
+six @ file:///croot/six_1744271502820/work
+smmap==5.0.2
+tensorboard @ file:///croot/tensorboard_1723042039441/work/tensorboard-2.17.0-py3-none-any.whl#sha256=859a499a9b1fb68a058858964486627100b71fcb21646861c61d31846a6478fb
+tensorboard_data_server @ file:///croot/tensorboard-data-server_1724172556187/work/tensorboard_data_server-0.7.0-py3-none-manylinux2014_x86_64.whl#sha256=162df89696269a70a88358ad14c08b73a057ccde1ec28f3dd314ca4fc4fd9ce4
+tensorflow @ file:///opt/conda/conda-bld/tensorflow-split_1729547219394/work/tensorflow_pkg/tensorflow-2.17.0-cp312-cp312-linux_x86_64.whl#sha256=8511f3ff6be96797e8ba3fab532f6cc320e1817f36123011a6a98860a0b1344d
+tensorflow_estimator @ file:///opt/conda/conda-bld/tensorflow-split_1729547219394/work/tensorflow-estimator/wheel_dir/tensorflow_estimator-2.15.0-py2.py3-none-any.whl#sha256=bd4ca878e838e94f6b31f66fdd7536ab8d8ac04661a1bc791686670280e868de
+termcolor @ file:///work/perseverance-python-buildout/croot/termcolor_1698874897952/work
+tifffile==2025.6.11
+typing_extensions @ file:///croot/typing_extensions_1734714854207/work
+urllib3 @ file:///croot/urllib3_1750775463400/work
+Werkzeug @ file:///croot/werkzeug_1737448706492/work
+wheel==0.45.1
+wrapt @ file:///croot/wrapt_1736540904746/work
