@@ -10,12 +10,15 @@ from PIL import Image
 import numpy as np
 import os
 import time
+import argparse
 
 with open("model/classes.txt", "r") as f:
   x = f.readlines()
   x = [i.strip() for i in x]
 
 for f in x:
+  if f == "flag":
+      f = "z_flag"
   if not os.path.exists("dataset/"+f):
     os.makedirs("dataset/"+f)
 
@@ -47,12 +50,19 @@ def load_model(bounds, preprocessing):
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser(prog='solver adversarial attack')
+    parser.add_argument('-c', '--cpu', action='store_true')
+    args = parser.parse_args()
+
     try:
         print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
         gpus = tf.config.list_physical_devices('GPU')
         gpus[0].name
         device = "/device:GPU:0"
     except:
+        device = "/device:CPU:0"
+
+    if args.cpu:
         device = "/device:CPU:0"
 
     try:
@@ -63,7 +73,9 @@ if __name__ == "__main__":
 
     start = time.time()
 
+    print(f"[INFO] Running on device: {device}")
     with tf.device(device):
+
         #loads model
         model = load_model(BOUNDS, PREPROCESSING)
 
@@ -95,6 +107,7 @@ if __name__ == "__main__":
 
         #runs an attack
         criterion = TargetedMisclassification(np.array([data.class_names.index("z_flag")]))
+        print(criterion)
         print("[INFO] Running the attack")
         if ATTACK_NAME == "LinfPGD":
             attack = LinfPGD(rel_stepsize=0.001, steps=200)
